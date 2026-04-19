@@ -1,1 +1,265 @@
-To jest próbna strona mojego zespołu!!!
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zespół KOPALNIA | Jakościowa Muzyka Rozrywkowa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* Główne kolory i ustawienia (Styl Old Money / Złoto / Beż) */
+        :root {
+            --bg-light: #F9F6F0; /* Jasny beż */
+            --text-dark: #3E2723; /* Głęboki brąz */
+            --gold-accent: #D4AF37; /* Złoto trąbki */
+            --white-light: #FFFFFF; /* Białe światła */
+            --nav-bg: rgba(249, 246, 240, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Nawigacja (Menu na górze) */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            background: var(--nav-bg);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--text-dark); text-decoration: none; }
+        .logo span { color: var(--gold-accent); }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--gold-accent); }
+
+        /* Sekcja Główna (Hero) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, var(--white-light) 0%, var(--bg-light) 100%);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: var(--gold-accent);
+            color: var(--white-light);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover { background-color: #B5952F; }
+
+        /* Wspólne style dla sekcji */
+        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--text-dark); }
+        .section-title::after {
+            content: ''; display: block; width: 60px; height: 3px;
+            background: var(--gold-accent); margin: 15px auto 0;
+        }
+
+        /* Sekcja Oferta */
+        .oferta-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
+        .oferta-box {
+            background: var(--white-light);
+            padding: 40px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--gold-accent);
+        }
+        .oferta-box h3 { margin-bottom: 15px; font-size: 1.5rem; }
+
+        /* Sekcja O Nas */
+        .about-content { text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
+
+        /* Sekcja Portfolio */
+        .portfolio-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .video-placeholder {
+            width: 350px; height: 200px;
+            background-color: var(--text-dark);
+            color: var(--gold-accent);
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 5px; font-weight: 600;
+        }
+
+        /* Sekcja Kontakt */
+        form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; }
+        input, textarea {
+            padding: 15px; margin-bottom: 20px;
+            border: 1px solid #CCC; border-radius: 3px;
+            font-family: inherit; background: var(--white-light);
+        }
+        input:focus, textarea:focus { outline: none; border-color: var(--gold-accent); }
+        .error-msg { color: #D32F2F; font-size: 12px; margin-top: -15px; margin-bottom: 15px; display: none; }
+
+        /* Stopka */
+        footer { text-align: center; padding: 30px; background: var(--text-dark); color: var(--bg-light); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">KOPAL<span>NIA</span></a>
+        <nav>
+            <a href="#oferta">OFERTA</a>
+            <a href="#o-nas">O NAS</a>
+            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#kontakt">KONTAKT</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>KOPALNIA</h1>
+        <p>Jakościowa muzyka rozrywkowa. Złoto trąbek, blask świateł i parkiet pełen tańca.</p>
+        <a href="#kontakt" class="btn">Zarezerwuj Termin</a>
+    </section>
+
+    <section id="oferta">
+        <h2 class="section-title">Nasza Oferta</h2>
+        <div class="oferta-grid">
+            <div class="oferta-box">
+                <h3>Eventy Firmowe</h3>
+                <p>Elegancka oprawa muzyczna gal i bankietów. Tworzymy atmosferę luksusu na parkiecie.</p>
+            </div>
+            <div class="oferta-box">
+                <h3>Koncerty Plenerowe</h3>
+                <p>Moc mosiężnych instrumentów i potężna dawka energii, która rozrusza każdy tłum.</p>
+            </div>
+            <div class="oferta-box">
+                <h3>Ekskluzywne Wesela</h3>
+                <p>Klasa, styl i taneczny repertuar, który Wasi goście zapamiętają na lata.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="o-nas">
+        <h2 class="section-title">O Zespole</h2>
+        <div class="about-content">
+            <p>Jesteśmy grupą młodych, wykształconych muzyków, których połączyła miłość do energetycznych brzmień. Wynieśliśmy muzykę rozrywkową na salony. Naszym znakiem rozpoznawczym jest potężna, mosiężna sekcja dęta – trąbki, które nadają każdemu utworowi niepowtarzalny, złoty blask. Gramy w 100% na żywo, dbając o każdy detal brzmienia i nienaganny, elegancki wizerunek sceniczny.</p>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="video-placeholder">▶ Miejsce na Wideo 1</div>
+            <div class="video-placeholder">▶ Miejsce na Wideo 2</div>
+            <div class="video-placeholder">▶ Miejsce na Wideo 3</div>
+        </div>
+    </section>
+
+    <section id="kontakt">
+        <h2 class="section-title">Napisz do nas</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Twoje Imię / Nazwa ośrodka" required>
+            <div id="nameError" class="error-msg">Proszę podać imię lub nazwę.</div>
+
+            <input type="email" id="email" placeholder="Twój adres E-mail" required>
+            <div id="emailError" class="error-msg">Proszę podać poprawny e-mail.</div>
+
+            <input type="tel" id="phone" placeholder="Twój numer telefonu (np. 123456789)" required>
+            <div id="phoneError" class="error-msg">Proszę podać poprawny numer telefonu (min. 9 cyfr).</div>
+
+            <textarea id="message" rows="5" placeholder="Napisz szczegóły wydarzenia..." required></textarea>
+            
+            <button type="submit" class="btn">Wyślij Wiadomość</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Zespół KOPALNIA. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        // Prosta walidacja formularza przed wysłaniem
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Zatrzymuje przeładowanie strony
+            
+            let isValid = true;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            // Sprawdzanie imienia
+            if(name.trim() === '') {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('nameError').style.display = 'none';
+            }
+
+            // Sprawdzanie maila (prosty wzór)
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!emailPattern.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            // Sprawdzanie telefonu (tylko cyfry i spacje, min 9 znaków)
+            const phonePattern = /^[0-9\s+]{9,}$/;
+            if(!phonePattern.test(phone)) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+
+            if(isValid) {
+                alert('Dziękujemy! Wiadomość została wysłana (To jest wersja testowa formularza).');
+                this.reset(); // Czyści formularz
+            }
+        });
+    </script>
+</body>
+</html>
