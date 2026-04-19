@@ -14,6 +14,50 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    /* --- POPRAWKI DLA TELEFONÓW (WERSJA MOBILNA) --- */
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 15px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav a.link-text {
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 13px;
+            }
+            .separator {
+                display: none; /* Ukrywamy kreskę na telefonach dla większej przejrzystości */
+            }
+            section {
+                padding: 130px 15px 40px; 
+            }
+            .glowne-logo {
+                width: 170px; /* Zmniejszone logo, żeby nie dominowało ekranu */
+                margin-bottom: 25px;
+            }
+            .content-box {
+                padding: 35px 20px; /* TO ROZWIĄZUJE PROBLEM ŚCIŚNIĘTEGO TEKSTU */
+                min-height: auto;
+            }
+            p {
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 20px;
+            }
+            .highlight {
+                font-size: 20px;
+            }
+            .instruments {
+                font-size: 18px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            .contact-info {
+                font-size: 16px;
+            }
+        }
     <style>
         :root { --bg-cream: #FCFAF5; --text-black: #111111; --gold-accent: #D4AF37; }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
