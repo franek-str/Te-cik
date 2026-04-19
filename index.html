@@ -4,263 +4,192 @@
     <meta name="google-site-verification" content="LOo8SAM0Qbu_sWjOKM7YFOhCx5tEmwphA3P8efZ8EkU" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zespół KOPALNIA | Jakościowa Muzyka Rozrywkowa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,700&display=swap" rel="stylesheet">
+    <title>ZESPÓŁ KOPALNIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Główne kolory i ustawienia (Styl Old Money / Złoto / Beż) */
+        /* Kolorystyka z nowego logo */
         :root {
-            --bg-light: #F9F6F0; /* Jasny beż */
-            --text-dark: #3E2723; /* Głęboki brąz */
-            --gold-accent: #D4AF37; /* Złoto trąbki */
-            --white-light: #FFFFFF; /* Białe światła */
-            --nav-bg: rgba(249, 246, 240, 0.95);
+            --bg-cream: #FCFAF5; /* Kremowe tło z logo */
+            --text-black: #111111; /* Czarny tekst z logo */
+            --gold-accent: #D4AF37; /* Złoty pierścień z logo */
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-black);
+            line-height: 1.8;
+            /* Delikatne tło nawiązujące do muzyki i fal z logo */
+            background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+        }
 
-        /* Nawigacja (Menu na górze) */
+        /* Pasek nawigacji na górze */
         header {
             position: fixed;
-            top: 0; width: 100%;
-            background: var(--nav-bg);
-            padding: 20px 50px;
+            top: 0;
+            width: 100%;
+            background-color: rgba(252, 250, 245, 0.95);
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
+            z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 2px solid var(--gold-accent);
         }
 
-        .logo { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--text-dark); text-decoration: none; }
-        .logo span { color: var(--gold-accent); }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--text-black);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
 
         nav a {
-            margin-left: 30px;
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--text-black);
             font-weight: 600;
-            font-size: 14px;
-            transition: color 0.3s;
+            margin-left: 30px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
         }
 
-        nav a:hover { color: var(--gold-accent); }
+        nav a:hover {
+            color: var(--gold-accent);
+        }
 
-        /* Sekcja Główna (Hero) */
-        .hero {
-            height: 100vh;
+        /* Główne sekcje strony */
+        section {
+            min-height: 100vh;
+            padding: 120px 20px 60px; /* Miejsce na menu */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle, var(--white-light) 0%, var(--bg-light) 100%);
-            padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            color: var(--text-dark);
+        .content-box {
+            max-width: 800px;
+            background-color: #FFFFFF;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 40px;
-            font-style: italic;
+        /* Teksty */
+        p {
+            font-size: 18px;
+            margin-bottom: 25px;
         }
 
-        .btn {
-            padding: 15px 30px;
-            background-color: var(--gold-accent);
-            color: var(--white-light);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 3px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn:hover { background-color: #B5952F; }
-
-        /* Wspólne style dla sekcji */
-        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--text-dark); }
-        .section-title::after {
-            content: ''; display: block; width: 60px; height: 3px;
-            background: var(--gold-accent); margin: 15px auto 0;
-        }
-
-        /* Sekcja Oferta */
-        .oferta-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
-        .oferta-box {
-            background: var(--white-light);
-            padding: 40px;
-            border-radius: 5px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-bottom: 4px solid var(--gold-accent);
-        }
-        .oferta-box h3 { margin-bottom: 15px; font-size: 1.5rem; }
-
-        /* Sekcja O Nas */
-        .about-content { text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
-
-        /* Sekcja Portfolio */
-        .portfolio-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .video-placeholder {
-            width: 350px; height: 200px;
-            background-color: var(--text-dark);
+        .highlight {
+            font-weight: 700;
             color: var(--gold-accent);
-            display: flex; justify-content: center; align-items: center;
-            border-radius: 5px; font-weight: 600;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            color: var(--text-black);
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--gold-accent);
+            margin: 15px auto 0;
         }
 
         /* Sekcja Kontakt */
-        form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; }
-        input, textarea {
-            padding: 15px; margin-bottom: 20px;
-            border: 1px solid #CCC; border-radius: 3px;
-            font-family: inherit; background: var(--white-light);
+        .contact-info {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-        input:focus, textarea:focus { outline: none; border-color: var(--gold-accent); }
-        .error-msg { color: #D32F2F; font-size: 12px; margin-top: -15px; margin-bottom: 15px; display: none; }
 
-        /* Stopka */
-        footer { text-align: center; padding: 30px; background: var(--text-dark); color: var(--bg-light); }
+        .contact-info a {
+            color: var(--text-black);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--gold-accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #EAEAEA;
+        }
 
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">KOPAL<span>NIA</span></a>
+        <a href="#glowna" class="logo">KOPALNIA</a>
         <nav>
-            <a href="#oferta">OFERTA</a>
-            <a href="#o-nas">O NAS</a>
-            <a href="#portfolio">PORTFOLIO</a>
-            <a href="#kontakt">KONTAKT</a>
+            <a href="#glowna">Główna</a>
+            <a href="#kontakt">Kontakt</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>KOPALNIA</h1>
-        <p>Jakościowa muzyka rozrywkowa. Złoto trąbek, blask świateł i parkiet pełen tańca.</p>
-        <a href="#kontakt" class="btn">Zarezerwuj Termin</a>
-    </section>
-
-    <section id="oferta">
-        <h2 class="section-title">Nasza Oferta</h2>
-        <div class="oferta-grid">
-            <div class="oferta-box">
-                <h3>Eventy Firmowe</h3>
-                <p>Elegancka oprawa muzyczna gal i bankietów. Tworzymy atmosferę luksusu na parkiecie.</p>
-            </div>
-            <div class="oferta-box">
-                <h3>Koncerty Plenerowe</h3>
-                <p>Moc mosiężnych instrumentów i potężna dawka energii, która rozrusza każdy tłum.</p>
-            </div>
-            <div class="oferta-box">
-                <h3>Ekskluzywne Wesela</h3>
-                <p>Klasa, styl i taneczny repertuar, który Wasi goście zapamiętają na lata.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="o-nas">
-        <h2 class="section-title">O Zespole</h2>
-        <div class="about-content">
-            <p>Jesteśmy grupą młodych, wykształconych muzyków, których połączyła miłość do energetycznych brzmień. Wynieśliśmy muzykę rozrywkową na salony. Naszym znakiem rozpoznawczym jest potężna, mosiężna sekcja dęta – trąbki, które nadają każdemu utworowi niepowtarzalny, złoty blask. Gramy w 100% na żywo, dbając o każdy detal brzmienia i nienaganny, elegancki wizerunek sceniczny.</p>
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <h2 class="section-title">Portfolio</h2>
-        <div class="portfolio-grid">
-            <div class="video-placeholder">▶ Miejsce na Wideo 1</div>
-            <div class="video-placeholder">▶ Miejsce na Wideo 2</div>
-            <div class="video-placeholder">▶ Miejsce na Wideo 3</div>
+    <section id="glowna">
+        <div class="content-box">
+            <p>Powroty do dobrej zabawy i pięknych emocji zawsze przenoszą nas gdzieś głębiej - i zazwyczaj robi to muzyka, którą pamiętamy z tych chwil.</p>
+            
+            <p>Piękne emocje dla nas znaczą dobrą zabawę przy dobrej muzyce - taką właśnie wam dostarczamy!</p>
+            
+            <p class="highlight">Dlaczego KOPALNIA?</p>
+            <p>Powodów jest kilka, ale dowiecie się tego gdy już się spotkamy :)</p>
+            
+            <p>Składamy się nie tylko z rozrywkowej mocy Perkusji, Basu, Gitary Elektrycznej i Fortepianu, ale mamy w sobie coś co pobudza do tańca:<br>
+            <strong>Trąbkę, Saksofon i Puzon!</strong></p>
+            
+            <p>Wszystko po to, by podkreślić imponujące wykonania naszej Wokalistki.</p>
+            
+            <p style="font-style: italic; margin-top: 30px;">Pokażemy wam jak można się przenieść do dobrze znanych emocji i wspomnień na nasz sposób.</p>
         </div>
     </section>
 
     <section id="kontakt">
-        <h2 class="section-title">Napisz do nas</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Twoje Imię / Nazwa ośrodka" required>
-            <div id="nameError" class="error-msg">Proszę podać imię lub nazwę.</div>
-
-            <input type="email" id="email" placeholder="Twój adres E-mail" required>
-            <div id="emailError" class="error-msg">Proszę podać poprawny e-mail.</div>
-
-            <input type="tel" id="phone" placeholder="Twój numer telefonu (np. 123456789)" required>
-            <div id="phoneError" class="error-msg">Proszę podać poprawny numer telefonu (min. 9 cyfr).</div>
-
-            <textarea id="message" rows="5" placeholder="Napisz szczegóły wydarzenia..." required></textarea>
-            
-            <button type="submit" class="btn">Wyślij Wiadomość</button>
-        </form>
+        <h2>Skontaktuj się z nami</h2>
+        <div class="content-box">
+            <p>Zadzwoń lub napisz do nas, aby omówić szczegóły Twojego wydarzenia:</p>
+            <div class="contact-info">
+                <a href="tel:+48519436211">📞 +48 519 436 211</a>
+                <a href="mailto:koncerty@kopalnia-music.pl">✉️ koncerty@kopalnia-music.pl</a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Zespół KOPALNIA. Wszystkie prawa zastrzeżone.</p>
+        &copy; 2026 Zespół KOPALNIA. Wszystkie prawa zastrzeżone.
     </footer>
 
-    <script>
-        // Prosta walidacja formularza przed wysłaniem
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Zatrzymuje przeładowanie strony
-            
-            let isValid = true;
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-
-            // Sprawdzanie imienia
-            if(name.trim() === '') {
-                document.getElementById('nameError').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('nameError').style.display = 'none';
-            }
-
-            // Sprawdzanie maila (prosty wzór)
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if(!emailPattern.test(email)) {
-                document.getElementById('emailError').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('emailError').style.display = 'none';
-            }
-
-            // Sprawdzanie telefonu (tylko cyfry i spacje, min 9 znaków)
-            const phonePattern = /^[0-9\s+]{9,}$/;
-            if(!phonePattern.test(phone)) {
-                document.getElementById('phoneError').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('phoneError').style.display = 'none';
-            }
-
-            if(isValid) {
-                alert('Dziękujemy! Wiadomość została wysłana (To jest wersja testowa formularza).');
-                this.reset(); // Czyści formularz
-            }
-        });
-    </script>
 </body>
 </html>
